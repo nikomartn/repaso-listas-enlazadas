@@ -3,7 +3,8 @@
 
 Linked_list_err err;
 
-int list_empty (Linked_list ref)
+int 
+list_empty (Linked_list ref)
 { //If the list isn't empty, returns 0
   return(ref == NULL);
 }
