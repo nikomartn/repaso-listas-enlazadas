@@ -152,3 +152,27 @@ add_new_node_on (Linked_list  list,
     }
 }
 
+Type_node_ref
+rm_next_node (Type_node_ref ref)
+{/*Removes the next node, returns the reference to the new next one or
+  *NULL*/
+  Type_node_ref to_remove = ref -> next;
+  Type_node_ref next = to_remove -> next;
+  
+  free (to_remove);
+  
+  ref -> next = next;
+  
+  return (next);
+}
+
+void
+rm_list (Linked_list  list)
+{
+  while (list -> next != NULL)
+    {
+      list -> next = rm_next_node (list);
+    }
+  free (list);
+  list = NULL;
+}

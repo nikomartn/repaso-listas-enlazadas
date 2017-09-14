@@ -57,3 +57,8 @@ add_new_node_on (Linked_list  list,
                  Type_info    info,
                  int          position);
   
+Type_node_ref
+rm_next_node (Type_node_ref ref);
+
+void
+rm_list (Linked_list  list);
