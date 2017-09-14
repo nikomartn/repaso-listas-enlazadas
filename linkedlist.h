@@ -18,10 +18,11 @@ typedef Type_node * Type_node_ref;
 typedef Type_node * Linked_list;
 
 //Error on some process (0 = fine)
-typedef int * Linked_list_err;
+typedef int Linked_list_err;
 /*  -2 = not an empty pointer
  *  -1 = problem when reserving memory
  *   1 = library not initiated
+ *   2 = this not exist
  * */
 
 /************************************************************************
@@ -38,16 +39,21 @@ int
 list_empty (Linked_list ref);
 
 Linked_list
-init_linked_list (Linked_list       ref,
-                  Linked_list_err   err);
+init_linked_list (Linked_list       ref);
 
 Type_node_ref
 last_node_reference (Linked_list  ref);
 
 Type_node_ref
 add_new_close_node  (Linked_list      ref,
-                     Linked_list_err  err,
                      Type_info        info);
 
+Type_node_ref
+add_new_mid_node  (Type_node_ref    ref,
+                   Type_info        info);
 
+Type_node_ref
+add_new_node_on (Linked_list  list,
+                 Type_info    info,
+                 int          position);
   
